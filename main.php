@@ -12,6 +12,6 @@ if(isset($_COOKIE["user"])){
 	</head>
 	
 	<body>
-	
+	Hello <?php echo($username);?>!
 	</body>
 </html>

@@ -1,5 +1,6 @@
 <?php
-if(isset($_POST["user"]) && isset($_POST["pass"])){
+if(isset($_POST["user"]) && isset($_POST["pass"])
+		&& $_POST["user"]!=""){
 	
 	$filehandle = fopen("users","r");
 
