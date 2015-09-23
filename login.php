@@ -4,9 +4,6 @@ if(isset($_POST["user"]) && isset($_POST["pass"])){
 	
 	$filehandle = fopen("users","r");
 
-	//$filehandle = fopen("users","a");
-	//fwrite($filehandle, "writingwriting");
-	
 	if($filehandle){
 		$line;
 		
