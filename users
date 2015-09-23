@@ -1,2 +1,1 @@
-Admin=1234
-Kristjan=password
+[{"user":"admin","pass":"1234"},{"user":"Kristjan","pass":"Password"}]

@@ -2,22 +2,18 @@
 if(isset($_POST["user"]) && isset($_POST["pass"])){
 	setcookie("user", $_POST["user"]);
 	
-	$filehandle = fopen("users","r");
-
-	if($filehandle){
-		$line;
-		
-		while($line = fgets($filehandle)){
-			$line = trim($line);
-			$comparetext = $_POST["user"]."=".$_POST["pass"];
-			if($line == $comparetext){
+	$filecontent = file_get_contents("users");
+	
+	$userlist = json_decode($filecontent, true);
+	
+	if(is_array($userlist)){
+		foreach ($userlist as $user){
+			if($_POST["user"] == $user["user"] && $_POST["pass"] == $user["pass"]){
 				fclose($filehandle);
 				header("Location: main.php");
 				exit();
 			}
 		}
-		
-		fclose($filehandle);
 	}
 
 	header("Location: index.php");
