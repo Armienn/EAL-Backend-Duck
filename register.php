@@ -25,7 +25,7 @@ if(isset($_POST["user"]) && isset($_POST["pass"])
 	}
 	//user does not already exist
 	$filehandle = fopen("users","a");
-	fwrite($filehandle, "\n".$_POST["user"]."=".$_POST["pass"]);
+	fwrite($filehandle, PHP_EOL.$_POST["user"]."=".$_POST["pass"]);
 	fclose($filehandle);
 
 	header("Location: index.php");
